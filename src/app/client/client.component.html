@@ -1,0 +1,39 @@
+<h1>Manage Clients</h1>
+<hr>
+
+<button id="addClientBtn" class="btn btn-primary" (click)="open(content)">Add Client</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Hugh-Martin</td>
+            <td>Roux</td>
+            <td>hughymartin@gmail.com</td>
+            <td>(+27) 61 003 5449</td>
+            <td><app-client-actions></app-client-actions></td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvas-basic-title">Profile update</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body">
+        <app-add-client-form></app-add-client-form>
+    </div>
+</ng-template>
+
+<hr>
